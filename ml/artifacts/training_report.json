@@ -1,0 +1,124 @@
+{
+ "created_utc": "2026-10-21T17:22:44+00:00",
+ "dataset": {
+  "name": "dataset.csv",
+  "demo_only": false,
+  "rows_used": 40486,
+  "license": "USER MUST VERIFY"
+ },
+ "cleaning": {
+  "rows_in": 40526,
+  "removed_missing_text": 0,
+  "removed_unknown_label": 0,
+  "missing_rating": 0,
+  "removed_conflicting_labels": 0,
+  "removed_duplicate_text": 40,
+  "has_reviewer_id": false,
+  "has_product_id": false,
+  "rows_out": 40486,
+  "fake_count": 20255,
+  "genuine_count": 20231
+ },
+ "split": {
+  "group_column": "row (no group column available)",
+  "train_rows": 32388,
+  "test_rows": 8098,
+  "cv_folds": 5,
+  "seed": 42
+ },
+ "cv_results": {
+  "LogisticRegression(C=0.5)": {
+   "accuracy": 0.9280596079804173,
+   "precision": 0.9375710702389629,
+   "recall": 0.9178192473210759,
+   "f1": 0.9275791922300041
+  },
+  "LogisticRegression(C=2)": {
+   "accuracy": 0.9423241323717815,
+   "precision": 0.9487362146029554,
+   "recall": 0.9356555109503428,
+   "f1": 0.9421459697290784
+  },
+  "LogisticRegression(C=8)": {
+   "accuracy": 0.946399769331269,
+   "precision": 0.9492274730292811,
+   "recall": 0.9437154932387518,
+   "f1": 0.9464543338917343
+  },
+  "LinearSVM(C=0.1)": {
+   "accuracy": 0.9399467172010032,
+   "precision": 0.9491693089627106,
+   "recall": 0.9301799791919748,
+   "f1": 0.9395695654818468
+  },
+  "LinearSVM(C=0.5)": {
+   "accuracy": 0.9474186738044702,
+   "precision": 0.9505055197451439,
+   "recall": 0.9444518974501923,
+   "f1": 0.9474585672266489
+  },
+  "LinearSVM(C=2)": {
+   "accuracy": 0.9437753738821621,
+   "precision": 0.9437282426837303,
+   "recall": 0.9443283674067251,
+   "f1": 0.9440167047620525
+  },
+  "NaiveBayes(alpha=0.1)": {
+   "accuracy": 0.8957018882165182,
+   "precision": 0.896693134382392,
+   "recall": 0.895366622338706,
+   "f1": 0.8960207473174379
+  },
+  "NaiveBayes(alpha=0.5)": {
+   "accuracy": 0.8949300450550487,
+   "precision": 0.8940550686660069,
+   "recall": 0.8969668251761636,
+   "f1": 0.8955013036228262
+  },
+  "NaiveBayes(alpha=1.0)": {
+   "accuracy": 0.8944360177650006,
+   "precision": 0.8910222939352405,
+   "recall": 0.8997325245315816,
+   "f1": 0.8953473515299116
+  }
+ },
+ "selected_model": "LinearSVM(C=0.5)",
+ "calibration": {
+  "a": 4.338381170623889,
+  "b": 0.037168228517385674
+ },
+ "thresholds": {
+  "genuine_at_or_below": 0.35,
+  "fake_at_or_above": 0.65
+ },
+ "test": {
+  "n": 8098,
+  "fake_share": 0.49357866139787604,
+  "binary_at_0_5": {
+   "accuracy": 0.9446776981970857,
+   "precision": 0.9475409836065574,
+   "recall": 0.9399549662246685,
+   "f1": 0.9437327304697313
+  },
+  "confusion_matrix": [
+   [
+    3893,
+    208
+   ],
+   [
+    240,
+    3757
+   ]
+  ],
+  "roc_auc": 0.987444314032891,
+  "brier": 0.041391897852314265,
+  "majority_class_accuracy": 0.5064213386021239,
+  "uncertain_share": 0.040503828105705075,
+  "metrics_on_decided_only": {
+   "accuracy": 0.9597168597168597,
+   "precision": 0.962496721741411,
+   "recall": 0.9557291666666666,
+   "f1": 0.9591010061413825
+  }
+ }
+}
